@@ -1,0 +1,28 @@
+doctype html
+html(ng-app="testApp")
+	head
+		- var page_name = "Test task"
+		include ./includes/head.jade
+
+	body
+
+		main(ng-controller="MainCtrl").main
+			section.section-blocks
+				.mode
+					input(type="checkbox", ng-model="infiniteMode", ng-click="showBtn = !showBtn" id="change-mode").mode__input
+					label(for="change-mode").mode__label infinite mode
+				.container.clearfix
+					.block(ng-repeat="block in blocks").clearfix.animated.fadeIn
+						img(ng-src="{{block.image}}", alt="picture").block__media
+						.block__rating
+							img(src="imgs/start-full.png", alt="star rating").block__rating-item
+							img(src="imgs/start-full.png", alt="star rating").block__rating-item
+							img(src="imgs/start-full.png", alt="star rating").block__rating-item
+							img(src="imgs/start-full.png", alt="star rating").block__rating-item
+							img(src="imgs/star-hollow.png", alt="star rating").block__rating-item
+
+						p.block__title {{block.title}}
+						p.block__paragraph {{block.paragraph}}
+				.js-mark
+				button.button(ng-click="loadChunk()", ng-show="showBtn") load more
+		include ./includes/footer.jade

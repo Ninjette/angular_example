@@ -1,0 +1,25 @@
+.button{
+	display: block;
+	margin: auto;
+	font-weight: 400;
+	text-align: center;
+	white-space: nowrap;
+	vertical-align: middle;
+	user-select: none;
+	border: 1px solid transparent;
+	padding: 6px 12px;
+	font-size: 16px;
+	font-weight: bold;
+	border-radius: 3px;
+	color: #fff;
+	background-color: #5cb85c;
+	border-color: #5cb85c;
+	transition: background-color .1s ease-out;
+	&:hover{
+		background-color: lighten(#5cb85c, 7);
+	}
+	&:focus{
+		background-color: darken(#5cb85c, 15);
+		outline: none;
+	}
+}
